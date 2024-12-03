@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game 12: Ohio State @ Michigan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="confetti-canvas"></canvas>
+    <header>
+        <img src="championship-emblem.png" alt="Michigan Championship Emblem">
+
+        <div class="site-title">
+            <h1>Michigan's 2023 Championship Season</h1>
+        </div>
+        
+        <div class="menu">
+            <button>☰</button>
+            <ul class="menu-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="game1.html">Week 1 - East Carolina</a></li>
+                <li><a href="game2.html">Week 2 - UNLV</a></li>
+                <li><a href="game3.html">Week 3 - Bowling Green</a></li>
+                <li><a href="game4.html">Week 4 - Rutgers</a></li>
+                <li><a href="game5.html">Week 5 - Nebraska</a></li>
+                <li><a href="game6.html">Week 6 - Minnesota</a></li>
+                <li><a href="game7.html">Week 7 - Indiana</a></li>
+                <li><a href="game8.html">Week 8 - Michigan State</a></li>
+                <li><a href="game9.html">Week 9 - Purdue</a></li>
+                <li><a href="game10.html">Week 10 - Penn State</a></li>
+                <li><a href="game11.html">Week 11 - Maryland</a></li>
+                <li><a href="game12.html">Week 12 - The Game</a></li>
+                <li><a href="game13.html">Big Ten Championship - Iowa</a></li>
+                <li><a href="game14.html">Rose Bowl - Alabama</a></li>
+                <li><a href="game15.html">National Championship - Washington</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class="game-header">
+            <h2>Week 12: The Game</h2>
+        </div>
+
+        <div class="description">
+            <p>Date: November 25, 2023</p>
+            <p>Stadium: Michigan Stadium, Ann Arbor, MI</p>
+            <p>Result: W 34-20</p>
+        </div>
+
+        <div class="carousel" id="carousel">
+            <div class="carousel-images">
+                <img src="l1.png" alt="OSU Game Highlight 1" tabindex="0" class="lightbox-trigger">
+                <img src="l2.png" alt="OSU Game Highlight 2" tabindex="0" class="lightbox-trigger">
+                <img src="l3.png" alt="OSU Game Highlight 3" tabindex="0" class="lightbox-trigger">
+                <img src="l4.png" alt="OSU Game Highlight 4" tabindex="0" class="lightbox-trigger">
+            </div>
+        </div>
+        <div class="carousel-buttons">
+            <button id="prev" aria-label="Previous slide" tabindex="0">Previous</button>
+            <button id="next" aria-label="Next slide" tabindex="0">Next</button>
+        </div>
+
+        <div class="lightbox" id="lightbox">
+            <img src="" alt="">
+        </div>
+
+        <div class="game-body">
+            <h3>Pre-Game Storylines</h3>
+            <p>
+                Both teams entered the game undefeated at 11-0, marking a high-stakes matchup with significant implications for the Big Ten Championship and College Football Playoff standings. Michigan aimed to extend its winning streak against Ohio State to three games, a feat not achieved since 1997. The game also marked the third and final game of head coach Jim Harbaugh's suspension, with offensive coordinator Sherrone Moore serving as acting head coach.
+            </p>
+        
+            <h3>Game Recap</h3>
+            <p>
+                The first quarter saw both defenses dominate, leading to a 7-3 Michigan advantage. In the second quarter, quarterback J.J. McCarthy connected with Roman Wilson for a 22-yard touchdown pass, extending the lead to 14-3. Ohio State responded with a touchdown pass from Kyle McCord to Emeka Egbuka, narrowing the gap to 14-10 at halftime.
+            </p>
+            <p>
+                In the third quarter, Michigan's James Turner kicked a 50-yard field goal, but Ohio State tied the game at 17-17 with a touchdown run by TreVeyon Henderson. Michigan regained the lead with a 22-yard touchdown run by Blake Corum, making it 24-17.
+            </p>
+            <p>
+                The fourth quarter featured a 38-yard field goal by Turner, extending Michigan's lead to 27-17. Ohio State answered with a touchdown pass to Marvin Harrison Jr., bringing the score to 27-24. Turner added another field goal, and a late interception by Rod Moore sealed the 30-24 victory for Michigan.
+            </p>
+        
+            <h3>Notable Performances</h3>
+            <ul>
+                <li>
+                    <strong>Blake Corum</strong>: The senior running back rushed for two touchdowns, setting a Michigan single-season record with 22 rushing touchdowns.
+                </li>
+                <li>
+                    <strong>J.J. McCarthy</strong>: The junior quarterback completed 16 of 20 passes for 148 yards and a touchdown, effectively managing the offense.
+                </li>
+                <li>
+                    <strong>Rod Moore</strong>: The defensive back secured a critical interception in the final minute, preserving Michigan's lead.
+                </li>
+            </ul>
+        
+            <h3>Post-Game Remarks</h3>
+            <p>
+                Acting head coach Sherrone Moore dedicated the win to Jim Harbaugh, stating, "Coach Harbaugh, we got your back, baby. We love you. That was for you, baby." The victory clinched the Big Ten East Division title for Michigan and marked the first time since 1997 that the Wolverines defeated Ohio State in three consecutive games.
+            </p>
+        
+            <h3>Game Highlights</h3>
+            <p>
+                For a visual recap of the game's key moments, watch the official highlight reel below:
+            </p>
+            <p>
+                <a href="https://www.youtube.com/watch?v=TVKMnZ6qodE" target="_blank">
+                    Ohio State vs. Michigan | EXTENDED HIGHLIGHTS | 11/25/2023
+                </a>
+            </p>        
+        </div>
+    </main>
+
+    <script>
+        document.querySelector('.menu button').addEventListener('click', function() {
+            const menuLinks = document.querySelector('.menu-links');
+            if (menuLinks.style.display === 'none' || menuLinks.style.display === '') {
+                menuLinks.style.display = 'block';
+            } else {
+                menuLinks.style.display = 'none';
+            }
+        });
+    </script>
+
+    <script>
+        const carousel = document.querySelector('.carousel-images');
+        const images = document.querySelectorAll('.carousel-images img');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = lightbox.querySelector('img');
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const width = document.querySelector('.carousel').clientWidth;
+            carousel.style.transform = `translateX(-${currentIndex * width}px)`;
+        }
+
+        // Button controls
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+            updateCarousel();
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+            updateCarousel();
+        });
+
+        // Keyboard controls for carousel
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                prevButton.click();
+            } else if (e.key === 'ArrowRight') {
+                nextButton.click();
+            }
+        });
+
+        window.addEventListener('resize', updateCarousel);
+
+        // Lightbox functionality
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                lightboxImg.src = image.src;
+                lightbox.style.display = 'flex';
+            });
+
+            // Enable Enter key to open lightbox
+            image.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    lightboxImg.src = image.src;
+                    lightbox.style.display = 'flex';
+                }
+            });
+        });
+
+        // Close lightbox on background click
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImg) {
+                lightbox.style.display = 'none';
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                lightbox.style.display = 'none';
+            }
+        });
+
+        // Initialize carousel
+        updateCarousel();
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+    document.addEventListener('click', (event) => {
+    confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: {
+            x: event.clientX / window.innerWidth,
+            y: event.clientY / window.innerHeight
+        },
+        colors: ['#FFCB05', '#00274C'] // Maize and Blue
+    });
+});
+</script>
+</body>
+</html>

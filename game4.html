@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game 4: Rutgers @ Michigan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="confetti-canvas"></canvas>
+    <header>
+        <img src="championship-emblem.png" alt="Michigan Championship Emblem">
+
+        <div class="site-title">
+            <h1>Michigan's 2023 Championship Season</h1>
+        </div>
+        
+        <div class="menu">
+            <button>☰</button>
+            <ul class="menu-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="game1.html">Week 1 - East Carolina</a></li>
+                <li><a href="game2.html">Week 2 - UNLV</a></li>
+                <li><a href="game3.html">Week 3 - Bowling Green</a></li>
+                <li><a href="game4.html">Week 4 - Rutgers</a></li>
+                <li><a href="game5.html">Week 5 - Nebraska</a></li>
+                <li><a href="game6.html">Week 6 - Minnesota</a></li>
+                <li><a href="game7.html">Week 7 - Indiana</a></li>
+                <li><a href="game8.html">Week 8 - Michigan State</a></li>
+                <li><a href="game9.html">Week 9 - Purdue</a></li>
+                <li><a href="game10.html">Week 10 - Penn State</a></li>
+                <li><a href="game11.html">Week 11 - Maryland</a></li>
+                <li><a href="game12.html">Week 12 - The Game</a></li>
+                <li><a href="game13.html">Big Ten Championship - Iowa</a></li>
+                <li><a href="game14.html">Rose Bowl - Alabama</a></li>
+                <li><a href="game15.html">National Championship - Washington</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class="game-header">
+            <h2>Week 4: Rutgers @ Michigan</h2>
+        </div>
+
+        <div class="description">
+            <p>Date: September 23, 2023</p>
+            <p>Stadium: Michigan Stadium, Ann Arbor, MI</p>
+            <p>Result: W 31-7</p>
+        </div>
+
+        <div class="carousel" id="carousel">
+            <div class="carousel-images">
+                <img src="d1.png" alt="Rutgers Game Highlight 1" tabindex="0" class="lightbox-trigger">
+                <img src="d2.png" alt="Rutgers Game Highlight 2" tabindex="0" class="lightbox-trigger">
+                <img src="d3.png" alt="Rutgers Game Highlight 3" tabindex="0" class="lightbox-trigger">
+                <img src="d4.png" alt="Rutgers Game Highlight 4" tabindex="0" class="lightbox-trigger">
+            </div>
+        </div>
+        <div class="carousel-buttons">
+            <button id="prev" aria-label="Previous slide" tabindex="0">Previous</button>
+            <button id="next" aria-label="Next slide" tabindex="0">Next</button>
+        </div>
+
+        <div class="lightbox" id="lightbox">
+            <img src="" alt="">
+        </div>
+
+        <div class="game-body">
+            <h3>Pre-Game Storylines</h3>
+            <p>
+                This game marked the return of head coach Jim Harbaugh to the sidelines after serving a three-game suspension. The Wolverines aimed to maintain their undefeated record and begin Big Ten Conference play on a strong note.
+            </p>
+        
+            <h3>Game Recap</h3>
+            <p>
+                Rutgers struck first with a 69-yard touchdown pass from quarterback Gavin Wimsatt to wide receiver Christian Dremel, giving the Scarlet Knights an early 7-0 lead. This marked the first time Michigan trailed during the 2023 season. The Wolverines responded with a two-yard touchdown run by Blake Corum, tying the game at 7-7.
+            </p>
+            <p>
+                In the second quarter, quarterback J.J. McCarthy connected with wide receiver Semaj Morgan for an 18-yard touchdown pass, putting Michigan ahead 14-7 at halftime.
+            </p>
+            <p>
+                The Wolverines extended their lead in the third quarter with a 46-yard field goal by James Turner. Defensive back Mike Sainristil then intercepted a pass and returned it 71 yards for a touchdown, making the score 24-7.
+            </p>
+            <p>
+                In the fourth quarter, Corum added a five-yard touchdown run, sealing the 31-7 victory for Michigan.
+            </p>
+        
+            <h3>Notable Performances</h3>
+            <ul>
+                <li>
+                    <strong>Blake Corum</strong>: The running back rushed for 97 yards and two touchdowns on 21 carries, showcasing his consistency and playmaking ability.
+                </li>
+                <li>
+                    <strong>J.J. McCarthy</strong>: The quarterback completed 15 of 21 passes for 214 yards and one touchdown, effectively managing the offense.
+                </li>
+                <li>
+                    <strong>Mike Sainristil</strong>: The defensive back's 71-yard interception return for a touchdown was a pivotal play that shifted momentum in Michigan's favor.
+                </li>
+            </ul>
+        
+            <h3>Post-Game Remarks</h3>
+            <p>
+                Head coach Jim Harbaugh expressed satisfaction with the team's resilience after an early deficit and praised the defense for forcing key turnovers. The victory marked Harbaugh's 75th at Michigan, making him the fourth coach in program history to reach this milestone.
+            </p>
+        
+            <h3>Game Highlights</h3>
+            <p>
+                For a visual recap of the game's key moments, watch the official highlight reel below:
+            </p>
+            <p>
+                <a href="https://www.youtube.com/watch?v=RVQj-FXg0w8" target="_blank">
+                    Rutgers at Michigan | Highlights | Big Ten Football | Sept. 23, 2023
+                </a>
+            </p>        
+        </div>
+    </main>
+
+    <script>
+        document.querySelector('.menu button').addEventListener('click', function() {
+            const menuLinks = document.querySelector('.menu-links');
+            if (menuLinks.style.display === 'none' || menuLinks.style.display === '') {
+                menuLinks.style.display = 'block';
+            } else {
+                menuLinks.style.display = 'none';
+            }
+        });
+    </script>
+
+    <script>
+        const carousel = document.querySelector('.carousel-images');
+        const images = document.querySelectorAll('.carousel-images img');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = lightbox.querySelector('img');
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const width = document.querySelector('.carousel').clientWidth;
+            carousel.style.transform = `translateX(-${currentIndex * width}px)`;
+        }
+
+        // Button controls
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+            updateCarousel();
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+            updateCarousel();
+        });
+
+        // Keyboard controls for carousel
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                prevButton.click();
+            } else if (e.key === 'ArrowRight') {
+                nextButton.click();
+            }
+        });
+
+        window.addEventListener('resize', updateCarousel);
+
+        // Lightbox functionality
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                lightboxImg.src = image.src;
+                lightbox.style.display = 'flex';
+            });
+
+            // Enable Enter key to open lightbox
+            image.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    lightboxImg.src = image.src;
+                    lightbox.style.display = 'flex';
+                }
+            });
+        });
+
+        // Close lightbox on background click
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImg) {
+                lightbox.style.display = 'none';
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                lightbox.style.display = 'none';
+            }
+        });
+
+        // Initialize carousel
+        updateCarousel();
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+    document.addEventListener('click', (event) => {
+    confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: {
+            x: event.clientX / window.innerWidth,
+            y: event.clientY / window.innerHeight
+        },
+        colors: ['#FFCB05', '#00274C'] // Maize and Blue
+    });
+});
+</script>
+</body>
+</html>

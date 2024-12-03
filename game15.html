@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game 15: Michigan vs Washington</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="confetti-canvas"></canvas>
+    <header>
+        <img src="championship-emblem.png" alt="Michigan Championship Emblem">
+
+        <div class="site-title">
+            <h1>Michigan's 2023 Championship Season</h1>
+        </div>
+        
+        <div class="menu">
+            <button>☰</button>
+            <ul class="menu-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="game1.html">Week 1 - East Carolina</a></li>
+                <li><a href="game2.html">Week 2 - UNLV</a></li>
+                <li><a href="game3.html">Week 3 - Bowling Green</a></li>
+                <li><a href="game4.html">Week 4 - Rutgers</a></li>
+                <li><a href="game5.html">Week 5 - Nebraska</a></li>
+                <li><a href="game6.html">Week 6 - Minnesota</a></li>
+                <li><a href="game7.html">Week 7 - Indiana</a></li>
+                <li><a href="game8.html">Week 8 - Michigan State</a></li>
+                <li><a href="game9.html">Week 9 - Purdue</a></li>
+                <li><a href="game10.html">Week 10 - Penn State</a></li>
+                <li><a href="game11.html">Week 11 - Maryland</a></li>
+                <li><a href="game12.html">Week 12 - The Game</a></li>
+                <li><a href="game13.html">Big Ten Championship - Iowa</a></li>
+                <li><a href="game14.html">Rose Bowl - Alabama</a></li>
+                <li><a href="game15.html">National Championship - Washington</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class="game-header">
+            <h2>Game 15: The National Championship</h2>
+        </div>
+
+        <div class="description">
+            <p>Date: January 8, 2024</p>
+            <p>Stadium: NRG Stadium, Houston, TX</p>
+            <p>Result: W 34-13</p>
+        </div>
+
+        <div class="carousel" id="carousel">
+            <div class="carousel-images">
+                <img src="home1.jpg" alt="Washington Game Highlight 1" tabindex="0" class="lightbox-trigger">
+                <img src="home3.jpg" alt="Washington Game Highlight 2" tabindex="0" class="lightbox-trigger">
+                <img src="home4.jpg" alt="Washington Game Highlight 3" tabindex="0" class="lightbox-trigger">
+                <img src="home5.jpg" alt="Washington Game Highlight 4" tabindex="0" class="lightbox-trigger">
+            </div>
+        </div>
+        <div class="carousel-buttons">
+            <button id="prev" aria-label="Previous slide" tabindex="0">Previous</button>
+            <button id="next" aria-label="Next slide" tabindex="0">Next</button>
+        </div>
+
+        <div class="lightbox" id="lightbox">
+            <img src="" alt="">
+        </div>
+
+        <div class="game-body">
+            <h3>Pre-Game Storylines</h3>
+            <p>
+                Michigan entered the game as the No. 1 seed, aiming for its first national championship since 1997. Washington, the No. 2 seed, sought its first national title since 1991. The matchup featured two of the nation's top offenses, with Michigan's ground game and Washington's aerial attack under scrutiny.
+            </p>
+        
+            <h3>Game Recap</h3>
+            <p>
+                Michigan struck first with a 41-yard touchdown run by Donovan Edwards. Washington responded with a 25-yard field goal, making it 7-3. Edwards added a 46-yard touchdown run, extending the lead to 14-3. A 31-yard field goal by James Turner increased Michigan's advantage to 17-3. Washington narrowed the gap with a 3-yard touchdown pass from Michael Penix Jr. to Jalen McMillan, ending the half at 17-10.
+            </p>
+            <p>
+                In the third quarter, Turner kicked a 38-yard field goal, making it 20-10. Washington answered with a 45-yard field goal, bringing the score to 20-13. In the fourth quarter, Blake Corum scored on a 12-yard run, and following an interception by Mike Sainristil, added a 1-yard touchdown, sealing the 34-13 victory.
+            </p>
+        
+            <h3>Notable Performances</h3>
+            <ul>
+                <li>
+                    <strong>Donovan Edwards</strong>: Rushed for 104 yards and two touchdowns on six carries.
+                </li>
+                <li>
+                    <strong>Blake Corum</strong>: Added 134 yards and two touchdowns on 21 carries.
+                </li>
+                <li>
+                    <strong>Mike Sainristil</strong>: Recorded a pivotal interception in the fourth quarter.
+                </li>
+            </ul>
+        
+            <h3>Post-Game Remarks</h3>
+            <p>
+                Head coach Jim Harbaugh celebrated the culmination of a three-year journey, stating, "Business is finished." The victory marked Michigan's first national championship in the College Football Playoff era.
+            </p>
+        
+            <h3>Game Highlights</h3>
+            <p>
+                For a visual recap of the game's key moments, watch the official highlight reel below:
+            </p>
+            <p>
+                <a href="https://www.youtube.com/watch?v=EBdREJkch8g" target="_blank">
+                    CFP National Championship: Michigan Wolverines vs. Washington Huskies | Full Game Highlights
+                </a>
+            </p>        
+        </div>
+    </main>
+
+    <script>
+        document.querySelector('.menu button').addEventListener('click', function() {
+            const menuLinks = document.querySelector('.menu-links');
+            if (menuLinks.style.display === 'none' || menuLinks.style.display === '') {
+                menuLinks.style.display = 'block';
+            } else {
+                menuLinks.style.display = 'none';
+            }
+        });
+    </script>
+
+    <script>
+        const carousel = document.querySelector('.carousel-images');
+        const images = document.querySelectorAll('.carousel-images img');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = lightbox.querySelector('img');
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const width = document.querySelector('.carousel').clientWidth;
+            carousel.style.transform = `translateX(-${currentIndex * width}px)`;
+        }
+
+        // Button controls
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+            updateCarousel();
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+            updateCarousel();
+        });
+
+        // Keyboard controls for carousel
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                prevButton.click();
+            } else if (e.key === 'ArrowRight') {
+                nextButton.click();
+            }
+        });
+
+        window.addEventListener('resize', updateCarousel);
+
+        // Lightbox functionality
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                lightboxImg.src = image.src;
+                lightbox.style.display = 'flex';
+            });
+
+            // Enable Enter key to open lightbox
+            image.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    lightboxImg.src = image.src;
+                    lightbox.style.display = 'flex';
+                }
+            });
+        });
+
+        // Close lightbox on background click
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImg) {
+                lightbox.style.display = 'none';
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                lightbox.style.display = 'none';
+            }
+        });
+
+        // Initialize carousel
+        updateCarousel();
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+    document.addEventListener('click', (event) => {
+    confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: {
+            x: event.clientX / window.innerWidth,
+            y: event.clientY / window.innerHeight
+        },
+        colors: ['#FFCB05', '#00274C'] // Maize and Blue
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap');
+
+/* body styling */
+html, body {
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header styling */
+header {
+    background-color: #00274C;
+    color: #FFCB05;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    position: relative;
+}
+
+header img {
+    height: 100px;
+    width: auto;
+}
+
+header .site-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 1rem;
+}
+
+/* Menu styling */
+header .menu button {
+    background: none;
+    border: none;
+    color: #FFCB05;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+header .menu button:hover {
+    color: #FFD54F;
+}
+
+header .menu-links {
+    background-color: #00274C;
+    color: #FFCB05;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+header .menu-links a {
+    text-decoration: none;
+    color: #FFCB05;
+    display: block;
+    padding: 0.5rem 1rem;
+    z-index: 1000;
+}
+
+header .menu-links a:hover {
+    background-color: #FFCB05;
+    color: #00274C;
+    z-index: 1000;
+}
+
+.hidden {
+    display: none;
+}
+
+main {
+    margin: 20px;
+    color: #00274C;
+}
+
+.intro {
+    font-size: 30px;
+}
+
+/* Gallery styling */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-items: center;
+}
+
+.gallery img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.lightbox img {
+    width: 80%;
+    border-radius: 5px;
+}
+
+.lightbox:target {
+    display: flex;
+}
+
+/* styling for game pages */
+
+.game-header {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.description {
+    text-align: center;
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.game-body {
+    margin: 20px auto;
+    padding: 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.carousel {
+    position: relative;
+    width: 1300px;
+    height: 600px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: border-color 0.3s ease; /* Smooth transition */
+    z-index: 999;
+}
+
+.carousel:focus-within {
+    border: 10px solid;
+    border-color: #00274C; /* Highlight border when focused */
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.carousel-images img {
+    width: 1300px;
+    height: auto;
+    flex-shrink: 0;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.carousel-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.carousel-buttons button {
+    background-color: #00274C;
+    color: #FFCB05;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-buttons button:hover {
+    background-color: #FFCB05;
+    color: #00274C;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.lightbox img {
+    border-radius: 10px;
+}
+
+.lightbox:target {
+    display: flex;
+}
+
+
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ensures it doesn't block clicks */
+    z-index: 9999;
+}
+
+/* Accessibility: prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none;
+        animation: none;
+    }
+}

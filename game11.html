@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game 11: Michigan @ Maryland</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="confetti-canvas"></canvas>
+    <header>
+        <img src="championship-emblem.png" alt="Michigan Championship Emblem">
+
+        <div class="site-title">
+            <h1>Michigan's 2023 Championship Season</h1>
+        </div>
+        
+        <div class="menu">
+            <button>☰</button>
+            <ul class="menu-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="game1.html">Week 1 - East Carolina</a></li>
+                <li><a href="game2.html">Week 2 - UNLV</a></li>
+                <li><a href="game3.html">Week 3 - Bowling Green</a></li>
+                <li><a href="game4.html">Week 4 - Rutgers</a></li>
+                <li><a href="game5.html">Week 5 - Nebraska</a></li>
+                <li><a href="game6.html">Week 6 - Minnesota</a></li>
+                <li><a href="game7.html">Week 7 - Indiana</a></li>
+                <li><a href="game8.html">Week 8 - Michigan State</a></li>
+                <li><a href="game9.html">Week 9 - Purdue</a></li>
+                <li><a href="game10.html">Week 10 - Penn State</a></li>
+                <li><a href="game11.html">Week 11 - Maryland</a></li>
+                <li><a href="game12.html">Week 12 - The Game</a></li>
+                <li><a href="game13.html">Big Ten Championship - Iowa</a></li>
+                <li><a href="game14.html">Rose Bowl - Alabama</a></li>
+                <li><a href="game15.html">National Championship - Washington</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class="game-header">
+            <h2>Week 11: Michigan @ Maryland</h2>
+        </div>
+
+        <div class="description">
+            <p>Date: November 18, 2023</p>
+            <p>Stadium: SECU Stadium, College Park, MD</p>
+            <p>Result: W 31-24</p>
+        </div>
+
+        <div class="carousel" id="carousel">
+            <div class="carousel-images">
+                <img src="k1.png" alt="Maryland Game Highlight 1" tabindex="0" class="lightbox-trigger">
+                <img src="k2.png" alt="Maryland Game Highlight 2" tabindex="0" class="lightbox-trigger">
+                <img src="k3.png" alt="Maryland Game Highlight 3" tabindex="0" class="lightbox-trigger">
+                <img src="k4.png" alt="Maryland Game Highlight 4" tabindex="0" class="lightbox-trigger">
+            </div>
+        </div>
+        <div class="carousel-buttons">
+            <button id="prev" aria-label="Previous slide" tabindex="0">Previous</button>
+            <button id="next" aria-label="Next slide" tabindex="0">Next</button>
+        </div>
+
+        <div class="lightbox" id="lightbox">
+            <img src="" alt="">
+        </div>
+
+        <div class="game-body">
+            <h3>Pre-Game Storylines</h3>
+            <p>
+                Michigan entered the game ranked No. 2 nationally, aiming to maintain their undefeated record and secure the program's 1,000th victory. The team continued to navigate challenges amid an ongoing NCAA investigation into alleged sign-stealing, with head coach Jim Harbaugh serving the second game of a suspension. Offensive coordinator Sherrone Moore assumed head coaching duties for the second consecutive week.
+            </p>
+        
+            <h3>Game Recap</h3>
+            <p>
+                The Wolverines established an early lead, with running back Blake Corum scoring two touchdowns in the first half. Defensive back Mike Sainristil contributed significantly with two interceptions, one of which set up a scoring drive. Michigan's defense held strong, limiting Maryland's offensive production and securing the win despite a late push from the Terrapins.
+            </p>
+        
+            <h3>Notable Performances</h3>
+            <ul>
+                <li>
+                    <strong>Blake Corum</strong>: The senior running back rushed for two touchdowns, contributing to Michigan's early lead.
+                </li>
+                <li>
+                    <strong>Mike Sainristil</strong>: The defensive back recorded two interceptions, playing a pivotal role in stifling Maryland's offense.
+                </li>
+                <li>
+                    <strong>J.J. McCarthy</strong>: The quarterback managed the game effectively, leading scoring drives and maintaining composure under pressure.
+                </li>
+            </ul>
+        
+            <h3>Post-Game Remarks</h3>
+            <p>
+                Acting head coach Sherrone Moore praised the team's resilience and focus amid external challenges, highlighting the defense's critical plays and the offense's ability to capitalize on opportunities. The victory marked a historic milestone, making Michigan the first college football program to achieve 1,000 wins.
+            </p>
+        
+            <h3>Game Highlights</h3>
+            <p>
+                For a visual recap of the game's key moments, watch the official highlight reel below:
+            </p>
+            <p>
+                <a href="https://www.youtube.com/watch?v=YADebIHc1mQ" target="_blank">
+                    Michigan at Maryland | Highlights | Big Ten Football | Nov. 18, 2023
+                </a>
+            </p>        
+        </div>
+    </main>
+
+    <script>
+        document.querySelector('.menu button').addEventListener('click', function() {
+            const menuLinks = document.querySelector('.menu-links');
+            if (menuLinks.style.display === 'none' || menuLinks.style.display === '') {
+                menuLinks.style.display = 'block';
+            } else {
+                menuLinks.style.display = 'none';
+            }
+        });
+    </script>
+
+    <script>
+        const carousel = document.querySelector('.carousel-images');
+        const images = document.querySelectorAll('.carousel-images img');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = lightbox.querySelector('img');
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const width = document.querySelector('.carousel').clientWidth;
+            carousel.style.transform = `translateX(-${currentIndex * width}px)`;
+        }
+
+        // Button controls
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+            updateCarousel();
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+            updateCarousel();
+        });
+
+        // Keyboard controls for carousel
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                prevButton.click();
+            } else if (e.key === 'ArrowRight') {
+                nextButton.click();
+            }
+        });
+
+        window.addEventListener('resize', updateCarousel);
+
+        // Lightbox functionality
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                lightboxImg.src = image.src;
+                lightbox.style.display = 'flex';
+            });
+
+            // Enable Enter key to open lightbox
+            image.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    lightboxImg.src = image.src;
+                    lightbox.style.display = 'flex';
+                }
+            });
+        });
+
+        // Close lightbox on background click
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImg) {
+                lightbox.style.display = 'none';
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                lightbox.style.display = 'none';
+            }
+        });
+
+        // Initialize carousel
+        updateCarousel();
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+    document.addEventListener('click', (event) => {
+    confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: {
+            x: event.clientX / window.innerWidth,
+            y: event.clientY / window.innerHeight
+        },
+        colors: ['#FFCB05', '#00274C'] // Maize and Blue
+    });
+});
+</script>
+</body>
+</html>
